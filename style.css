@@ -1,0 +1,356 @@
+body{
+    background: url(img/banner.jpg) center center fixed;
+    background-size: cover;
+    display: grid;
+    grid-template-areas:
+    'nav nav nav'
+    'home home home'
+    'sobre sobre sobre'
+    'sorteio sorteio sorteio'
+    'contato contato contato'
+    'footer footer footer';
+    grid-template-rows: 10vh 100vh 110vh 115vh 115vh 20vh;
+    margin: 0;
+    scroll-behavior: smooth; /* suaviza a rolagem do elemento */
+}
+
+p, h2, li{
+    font-family: 'Roboto Mono', monospace;
+    text-align: justify;
+}
+
+h2{
+    font-size: 22pt;
+}
+
+nav{
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    grid-area: nav;
+    height: 10vh;
+    justify-content: space-around;
+    position: fixed;
+    width: 100%;
+}
+
+nav a{
+    color: darkslategrey;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18pt;
+    text-decoration: none;
+}
+
+nav img{
+    height: 80px;
+    width: 80px;
+}
+
+nav .nav-menu{
+    background-color: rgba(255, 255, 255, 0.6);
+    display: none;
+    flex-direction: column;
+    height: 132px;
+    margin-top: 194px;
+    text-align: center;
+    width: 300px;
+}
+
+nav .menu-hamburguer{
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+}
+
+nav .menu-hamburguer span{
+    background-color: black;
+    border-radius: 30px;
+    display: block;
+    height: 3px;
+    margin: 3px 0;
+    transition: 0.5s;
+    width: 100%;
+}
+
+nav .menu-hamburguer span:nth-child(1), .menu-hamburguer span:nth-child(3){
+    transform-origin: right center;
+}
+
+nav .menu-hamburguer.ativo span:nth-child(1){
+    transform: rotateZ(-37deg);
+}
+
+nav .menu-hamburguer.ativo span:nth-child(2){
+    opacity: 0;
+}
+
+nav .menu-hamburguer.ativo span:nth-child(3){
+    transform: rotateZ(37deg);
+}
+
+.abrirMenu{
+    display: flex;
+    display: flex !important;
+    transition: 0.8s;
+}
+
+#home{
+    align-items: center;
+    display: flex;
+    grid-area: home;
+    justify-content: center;
+}
+
+#home h1{
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 68pt;
+}
+
+#home h1 span{
+    color: grey;
+}
+
+#sobre{
+    align-items: space-around;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    grid-area: sobre;
+    justify-content: center;
+}
+
+#sobre .sobre-quemSomos{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+    margin-top: 70px;
+    width: 500px;
+}
+
+#sobre .sobre-nossaIdeia{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: center;
+    text-align: justify;
+    width: 500px;
+}
+
+#sobre .sobre-quemSomos img, .sobre-nossaIdeia img{
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+}
+
+#sobre .sobre-quemSomos p, #sobre .sobre-nossaIdeia p{
+    display: none;
+}
+
+.seta{
+    align-items: center;
+    display: flex;
+    height: 50px;
+    padding: 0;
+}
+
+#sorteio{
+    align-items: center;
+    background-color: rgba(105, 105, 105, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    grid-area: sorteio;
+    justify-content: space-around;
+}
+
+#sorteio .sorteio-texto{
+    text-align: justify;
+    width: 350px;
+}
+
+#sorteio .sorteio-forms{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#sorteio .sorteio-forms img{
+    height: 90px;
+    padding: 10px;
+    width: 90px;
+}
+
+#sorteio .sorteio-forms .inputs{
+    display: flex;
+}
+
+#sorteio .sorteio-forms .inputs input:nth-child(1){
+    border: 1px solid white;  
+    border-radius: 15px 0 0 15px;
+    padding: 13px 20px;
+    width: 220px;
+}
+
+#sorteio .sorteio-forms .inputs input:nth-child(2){
+    color: white;
+    cursor: pointer;
+    background-color: #1DB954;
+    border: 1px solid #1DB954;
+    border-radius: 0 15px 15px 0;
+    font-size: 12pt;
+    padding: 10px 30px;
+}
+
+#contato{
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    grid-area: contato;
+    justify-content: space-around;
+}
+
+#contato .contato-texto{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+} 
+
+#contato .contato-texto p{
+    display: none;
+}
+
+#contato .contato-texto img{
+    height: 90px;
+    padding: 10px;
+    width: 90px;
+}
+
+#contato .contato-forms form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+}
+
+#contato .contato-forms form textarea{
+    resize: none;
+}
+
+#contato .contato-forms form .form-btns{
+    display: flex;
+}
+
+#contato .contato-forms form .form-btns input:nth-child(1), input:nth-child(2){
+    color: black;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 15px 0 0 15px;
+    font-size: 14pt;
+    padding: 10px 30px;
+}
+
+#contato .contato-forms form .form-btns input:nth-child(2){
+    background-color: #1DB954;
+    border: 1px solid #1DB954;
+    border-radius: 0 15px 15px 0;
+    color: white;
+}
+
+footer{
+    align-items: center;
+    background-color: rgba(105, 105, 105, 0.6);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: footer;
+}
+
+/* CELULAR */
+@media(min-width: 576px){
+    body{
+    grid-template-rows: 10vh 100vh 100vh 100vh 80vh 20vh;
+    }
+
+    nav .menu-hamburguer{
+        display: none;
+    }
+
+    nav .nav-menu{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: space-around;
+        margin-top: 0;
+        width: 90%;
+    }
+    
+    #sobre{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    
+    #sobre .sobre-quemSomos{
+        height: 500px;
+        width: 500px;
+        
+    }
+    
+    #sobre .sobre-quemSomos img, .sobre-nossaIdeia img{
+        display: none;
+    }
+    
+    #sobre .sobre-nossaIdeia{
+        height: 500px;
+        width: 500px;
+    }
+    
+    #sobre .sobre-quemSomos p, #sobre .sobre-nossaIdeia p{
+        display: block;
+    }
+    
+    #sorteio{
+        align-items: center;
+        background-color: rgba(105, 105, 105, 0.6);
+        color: white;
+        display: flex;
+        flex-direction: row;
+        grid-area: sorteio;
+        justify-content: space-around;
+    }
+    
+    #contato{
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.6);
+        display: flex;
+        flex-direction: row;
+        grid-area: contato;
+        justify-content: space-around;
+    }
+
+    #contato .contato-texto p{
+        display: block;
+    }
+
+    #contato .contato-forms form{
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        justify-content: center;
+    }
+    
+}
